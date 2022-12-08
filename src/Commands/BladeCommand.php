@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Rawilk\Blade\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class BladeCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'blade';
 
     public $description = 'My command';
 
