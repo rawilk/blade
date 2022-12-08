@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rawilk\Blade;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rawilk\Blade\Commands\BladeCommand;
 
 class BladeServiceProvider extends PackageServiceProvider
 {
@@ -13,8 +14,6 @@ class BladeServiceProvider extends PackageServiceProvider
         $package
             ->name('blade')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_blade_table')
-            ->hasCommand(BladeCommand::class);
+            ->hasViews();
     }
 }
