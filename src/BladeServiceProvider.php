@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Rawilk\Blade;
 
+use Rawilk\Blade\Commands\BladeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
