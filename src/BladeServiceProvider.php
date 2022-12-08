@@ -2,9 +2,9 @@
 
 namespace Rawilk\Blade;
 
+use Rawilk\Blade\Commands\BladeCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Rawilk\Blade\Commands\BladeCommand;
 
 class BladeServiceProvider extends PackageServiceProvider
 {
