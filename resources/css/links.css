@@ -1,0 +1,42 @@
+:root {
+    --link-text-color: theme("colors.blue.600");
+    --link-hover-text-color: theme("colors.blue.500");
+    --link-dark-text-color: theme("colors.slate.600");
+    --link-dark-hover-text-color: theme("colors.slate.500");
+}
+
+@layer components {
+    .app-link {
+        @apply font-medium
+        transition
+        focus:outline-none
+        relative;
+
+        color: var(--link-text-color);
+    }
+
+    .app-link:not([disabled]):hover,
+    .app-link:not([disabled]):focus {
+        @apply underline;
+    }
+
+    .app-link:hover {
+        color: var(--link-hover-text-color);
+    }
+
+    .app-link--dark {
+        --link-text-color: var(--link-dark-text-color);
+    }
+
+    .app-link--dark:not([disabled]):hover {
+        --link-hover-text-color: var(--link-dark-hover-text-color);
+    }
+
+    a.text-xs .external-indicator {
+        @apply -right-4;
+    }
+
+    a.text-xs .external-indicator svg {
+        @apply w-3 h-3;
+    }
+}

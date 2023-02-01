@@ -1,0 +1,143 @@
+:root {
+    --button-border-radius: theme("borderRadius.md");
+    --button-font-weight: theme("fontWeight.semibold");
+    --button-hover-shadow: rgb(76 78 100 / 56%) 0 6px 18px -8px;
+    --button-active-shadow: rgb(76 78 100 / 20%) 0 5px 5px -3px, rgb(76 78 100 / 14%) 0 8px 10px 1px, rgb(76 78 100 / 12%) 0 3px 14px 2px;
+    --button-pill-radius: 30px;
+}
+
+@layer components {
+    .button {
+        @apply relative
+        inline-flex
+        items-center
+        justify-center
+        align-middle
+        box-border
+        outline-none
+        border-0
+        leading-5
+        transition-colors
+        px-5
+        py-2.5
+        select-none
+        text-sm
+        shadow-md
+        appearance-none
+        cursor-pointer
+
+        focus:outline-none;
+
+        text-decoration: none;
+        border-radius: var(--button-border-radius);
+        font-weight: var(--button-font-weight);
+    }
+
+    .button:focus:not([x-ripple]) {
+        @apply ring-2
+            ring-offset-1;
+    }
+
+    .button:hover {
+        box-shadow: var(--button-hover-shadow);
+    }
+
+    .button:active {
+        box-shadow: var(--button-active-shadow);
+    }
+
+    .button-outlined {
+        @apply bg-transparent
+        shadow-none
+        border
+        border-solid
+        text-slate-500;
+
+        border-color: var(--button-border-color, theme("colors.slate.400"));
+    }
+
+    .button-outlined:hover,
+    .button-text:hover {
+        --button-hover-shadow: none;
+    }
+
+    .button-outlined:active,
+    .button-text:active {
+        --button-active-shadow: none;
+    }
+
+    .button-text {
+        @apply bg-transparent
+        shadow-none
+        border-0;
+
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+
+    .button--pill {
+        --button-border-radius: var(--button-pill-radius);
+    }
+
+    .button--icon {
+        @apply rounded-full p-0;
+    }
+
+    .button-contained.button--disabled:not(.button--busy),
+    .button-contained[disabled]:not(.button--busy) {
+        @apply bg-slate-100
+        text-slate-500/50;
+    }
+
+    .button-outlined.button--disabled:not(.button--busy),
+    .button-outlined[disabled]:not(.button--busy) {
+        @apply text-slate-500/25
+        border-slate-500/25;
+    }
+
+    .button-text.button--disabled:not(.button--busy),
+    .button-text[disabled]:not(.button--busy) {
+        @apply text-slate-500/25;
+    }
+
+    .button--disabled:not(.button--busy),
+    .button[disabled]:not(.button--busy) {
+        @apply cursor-not-allowed
+        shadow-none;
+    }
+
+    .button--busy {
+        @apply opacity-75 cursor-wait;
+    }
+
+    .button--busy .ripple-focus {
+        @apply hidden;
+    }
+
+    .button-contained.button--white {
+        @apply bg-white
+        text-slate-600;
+
+        --ripple-color: theme("colors.slate.400");
+    }
+
+    .button-contained.button--white:not([disabled]):not(.button--disabled):not(.button--busy):not(.button-no-hover):hover {
+        @apply bg-slate-100;
+    }
+
+    .button__icon {
+        @apply inline-block;
+    }
+
+    .button__icon--left {
+        @apply mr-2 -ml-1;
+    }
+
+    .button__icon--right {
+        @apply ml-2 -mr-1;
+    }
+
+    .button--link[disabled]:not(.button--busy) {
+        @apply text-slate-500/50
+        cursor-not-allowed;
+    }
+}

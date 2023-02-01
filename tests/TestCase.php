@@ -1,20 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rawilk\Blade\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Rawilk\Blade\BladeServiceProvider;
 
 class TestCase extends Orchestra
 {
+    use InteractsWithViews;
+
+    protected $enablesPackageDiscoveries = true;
+
     protected function setUp(): void
     {
         parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Rawilk\\Blade\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
-        );
+        $this->withoutExceptionHandling();
     }
 
     protected function getPackageProviders($app): array
@@ -22,11 +26,5 @@ class TestCase extends Orchestra
         return [
             BladeServiceProvider::class,
         ];
-    }
-
-    public function getEnvironmentSetUp($app)
-    {
-        // include_once __DIR__ . '/../database/migrations/create_blade_table.php.stub';
-        // (new \CreatePackageTable())->up();
     }
 }
