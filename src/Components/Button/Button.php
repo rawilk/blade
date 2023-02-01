@@ -106,7 +106,14 @@ class Button extends BladeComponent
 
         // Wrapped in a try-catch in case livewire is not installed.
         try {
-            $wireTarget = $this->attributes->wire('click')->value();
+            // First check if user explicitly specified a different wire target.
+            $wireTarget = $this->attributes->wire('target')->value();
+
+            // If no wire target is specified, use the wire:click as the wire target.
+            // This is the intended behavior for most buttons.
+            if (! $wireTarget) {
+                $wireTarget = $this->attributes->wire('click')->value();
+            }
         } catch (Throwable) {
         }
 

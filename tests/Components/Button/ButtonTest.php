@@ -412,3 +412,24 @@ test('config defaults can be overridden', function () {
             ]);
         });
 });
+
+test('a different wire:target may be specified from wire:click', function () {
+    $template = '<x-blade::button.button wire:click="foo" wire:target="bar">Click me</x-blade::button.button>';
+    Route::get('/test', fn () => LaravelBlade::render($template));
+
+    get('/test')
+        ->assertElementExists('button', function (AssertElement $button) {
+            $button->has('wire:target', 'bar')
+                ->has('wire:click', 'foo');
+
+            // The loading indicator should use the same wire:target as what was explicitly passed in.
+            $button->contains('.button__loader', [
+                'wire:target' => 'bar',
+            ]);
+
+            // The button content should use the same wire:target as what was explicitly passed in.
+            $button->contains('.button__content', [
+                'wire:target' => 'bar',
+            ]);
+        });
+});
