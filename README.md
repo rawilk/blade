@@ -8,6 +8,8 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/rawilk/blade?style=flat-square)](https://packagist.org/packages/rawilk/blade)
 [![License](https://img.shields.io/github/license/rawilk/blade?style=flat-square)](https://github.com/rawilk/blade/blob/main/LICENSE.md)
 
+![social image](https://banners.beyondco.de/blade.png?theme=light&packageManager=composer+require&packageName=rawilk%2Fblade&pattern=linesInMotion&style=style_1&description=Commonly+needed+blade+components+for+Laravel+apps.&md=1&showWatermark=0&fontSize=100px&images=code)
+
 Blade is a package that provides blade components for common elements you may need in an application. The components are built and optimized for Tailwind CSS, Laravel Livewire, and Alpine.js, however they can be styled and used differently.
 
 ## Installation
@@ -40,7 +42,7 @@ This will render a button with a background color of blue. Since a `wire:click` 
 
 > Note: The button component, along with may other components, can also be referenced with its alias defined in the config file. For example, you can use `x-button` instead of `x-blade::button.button`.
 
-Further documentation will be coming in the future for further usage on each of hte components.
+Further documentation will be coming in the future for further usage on each of the components.
 
 ## Scripts
 

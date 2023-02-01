@@ -1,6 +1,6 @@
 {
     "name": "rawilk/blade",
-    "description": "Blade components for Laravel.",
+    "description": "Commonly needed blade components for Laravel apps.",
     "keywords": [
         "rawilk",
         "laravel",
