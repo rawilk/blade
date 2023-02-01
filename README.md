@@ -1,3 +1,5 @@
+**Notice:** This package is still under development and is not production ready. Available components and api may change at any time without a major version change; use at your own risk.
+
 # blade
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rawilk/blade.svg?style=flat-square)](https://packagist.org/packages/rawilk/blade)
@@ -6,7 +8,7 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/rawilk/blade?style=flat-square)](https://packagist.org/packages/rawilk/blade)
 [![License](https://img.shields.io/github/license/rawilk/blade?style=flat-square)](https://github.com/rawilk/blade/blob/main/LICENSE.md)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Blade is a package that provides blade components for common elements you may need in an application. The components are built and optimized for Tailwind CSS, Laravel Livewire, and Alpine.js, however they can be styled and used differently.
 
 ## Installation
 
@@ -14,13 +16,6 @@ You can install the package via composer:
 
 ```bash
 composer require rawilk/blade
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="blade-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -33,10 +28,19 @@ You can view the default configuration here: https://github.com/rawilk/blade/blo
 
 ## Usage
 
-```php
-$blade = new Rawilk\Blade;
-echo $blade->echoPhrase('Hello, Rawilk!');
+Here is an example of how you can render a button element using the `button` component:
+
+```html
+<x-blade::button.button color="blue" wire:click="update">
+    Click me
+</x-blade::button.button>
 ```
+
+This will render a button with a background color of blue. Since a `wire:click` is specified, our button component will automatically add a loading indicator inside the button that will be shown when while waiting for the server to finish the request.
+
+> Note: The button component, along with may other components, can also be referenced with its alias defined in the config file. For example, you can use `x-button` instead of `x-blade::button.button`.
+
+Further documentation will be coming in the future for further usage on each of hte components.
 
 ## Scripts
 
