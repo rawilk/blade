@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rawilk\Blade\Components\Button;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 class Icon extends Button
 {
@@ -24,6 +25,9 @@ class Icon extends Button
 
         // Named icon prop. If specified, default slot will be ignored.
         public ?string $icon = null,
+
+        // Extra attributes
+        null|array|Collection $extraAttributes = null,
     ) {
         parent::__construct(
             color: $color,
@@ -34,6 +38,7 @@ class Icon extends Button
             showLoader: $showLoader,
             href: $href,
             noReferrer: $noReferrer,
+            extraAttributes: $extraAttributes,
         );
     }
 

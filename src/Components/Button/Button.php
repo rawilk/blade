@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace Rawilk\Blade\Components\Button;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Rawilk\Blade\Components\BladeComponent;
 use Rawilk\Blade\Concerns\HandlesExternalLinks;
+use Rawilk\Blade\Concerns\HasExtraAttributes;
 use Throwable;
 
 class Button extends BladeComponent
 {
     use HandlesExternalLinks;
+    use HasExtraAttributes;
 
     protected bool $hideExternalIndicator = true;
 
@@ -38,6 +41,9 @@ class Button extends BladeComponent
         // Link specific options
         public ?string $href = null,
         public bool $noReferrer = false, // Only applies to external links
+
+        // Extra attributes
+        null|array|Collection $extraAttributes = null,
     ) {
         $this->size = $size ?? config('blade.defaults.button.size', 'md');
         $this->color = $color ?? config('blade.defaults.button.color', 'slate');
@@ -46,6 +52,8 @@ class Button extends BladeComponent
         $this->rippleFocus = $rippleFocus ?? config('blade.defaults.button.ripple_focus');
         $this->showLoader = $showLoader ?? config('blade.defaults.button.show_loader');
         $this->pill = $pill ?? config('blade.defaults.button.pill');
+
+        $this->setExtraAttributes($extraAttributes);
     }
 
     public function buttonClass(): string

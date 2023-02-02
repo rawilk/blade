@@ -7,3 +7,4 @@
 @if ($isDisabled())
     tabindex="-1"
 @endif
+{{ $extraAttributes ?? '' }}

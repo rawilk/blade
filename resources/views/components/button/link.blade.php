@@ -11,6 +11,7 @@
     @if ($isDisabled())
         tabindex="-1"
     @endif
+    {{ $extraAttributes ?? '' }}
 >
     @if ($shouldShowLoader())
         <div class="flex items-center justify-center absolute inset-0 opacity-0 transition-opacity button__loader"

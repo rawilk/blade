@@ -433,3 +433,22 @@ test('a different wire:target may be specified from wire:click', function () {
             ]);
         });
 });
+
+test('an array of attributes can be passed to a button', function () {
+    $extraAttributes = [
+        'data-foo' => 'bar',
+        'aria-controls' => 'foo',
+        'aria-haspopup' => 'true',
+        'x-bind:aria-expanded' => 'JSON.stringify(open)',
+    ];
+
+    $template = '<x-blade::button.button :extra-attributes="$extraAttributes">Click me</x-blade::button.button>';
+    Route::get('/test', fn () => LaravelBlade::render($template, ['extraAttributes' => $extraAttributes]));
+
+    get('/test')
+        ->assertElementExists('button', function (AssertElement $button) use ($extraAttributes) {
+            foreach ($extraAttributes as $attribute => $value) {
+                $button->has($attribute, $value);
+            }
+        });
+});

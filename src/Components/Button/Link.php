@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rawilk\Blade\Components\Button;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 
 /**
  * This component is useful for creating buttons that look like links.
@@ -23,6 +24,9 @@ class Link extends Button
         // Named icon props. Using these props will override the icon slots.
         public ?string $leftIcon = null,
         public ?string $rightIcon = null,
+
+        // Extra attributes
+        null|array|Collection $extraAttributes = null,
     ) {
         parent::__construct(
             block: $block,
@@ -34,6 +38,8 @@ class Link extends Button
 
         $this->appLink = $appLink ?? config('blade.defaults.link.app_link', true);
         $this->dark = $dark ?? config('blade.defaults.link.dark', false);
+
+        $this->setExtraAttributes($extraAttributes);
     }
 
     public function buttonClass(): string
