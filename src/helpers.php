@@ -7,9 +7,6 @@ use Illuminate\Support\Str;
 if (! function_exists('isExternalLink')) {
     /**
      * Determine if a given url is an external url (i.e. not the app's url).
-     *
-     * @param  string|null  $url
-     * @return bool
      */
     function isExternalLink(?string $url): bool
     {
