@@ -45,6 +45,7 @@ return [
             'app_link' => true,
 
             // Applies a css `app-link--dark` class to the link - requires `app_link` to be true
+            // Not to be confused with Tailwind's "dark" mode.
             'dark' => false,
 
             // Hides a visible icon indicating a link is external.
