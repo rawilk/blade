@@ -1,4 +1,4 @@
-<span class="button__content inline-flex items-center transition-all"
+<span class="button__content inline-flex items-center"
       @if ($shouldShowLoader() && $wireTarget())
           wire:loading.class.delay="invisible"
           wire:target="{{ $wireTarget() }}"
