@@ -15,13 +15,15 @@ module.exports = function ({ addComponents, addUtilities, theme, config }) {
         }
 
         buttons[`.button--${colorName}`] = {
-            backgroundColor: color['500'],
-            color: theme(`colors[white]`),
+            '--button-bg': color['500'],
+            '--button-dark-bg': color['600'],
+            '--button-color': theme(`colors[white]`),
             '@apply shadow': {},
         };
 
         buttons[`.button--${colorName}:hover:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover)`] = {
-            backgroundColor: color['700'],
+            '--button-bg': color['700'],
+            '--button-dark-bg': colorName === 'slate' ? color['500'] : color['800'],
         };
 
         buttons[`.button--${colorName}:focus:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover):not([x-ripple])`] = {
@@ -30,28 +32,46 @@ module.exports = function ({ addComponents, addUtilities, theme, config }) {
 
         // Outlined buttons
         buttons[`.button-outlined.button--${colorName}`] = {
-            color: color['600'],
+            '--button-color': color['600'],
             '--button-border-color': theme(`colors.${colorName}.500`),
+            '--button-dark-bg': 'transparent',
+            '--button-dark-text-color': colorName === 'slate' ? color['300'] : color['500'],
             '--ripple-color': theme(`colors.${colorName}.400`),
         };
 
         buttons[`.button-outlined.button--${colorName}:hover:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover)`] = {
-            backgroundColor: theme(`colors.${colorName}.50`),
+            '--button-bg': theme(`colors.${colorName}.50`),
             '--button-border-color': theme(`colors.${colorName}.600`),
+            '--button-dark-bg': theme(`colors.${colorName}.400`),
+            '--button-dark-border-color': theme(`colors.${colorName}.500`),
+            '--button-dark-text-color': theme(`colors.${colorName}.800`),
+        };
+
+        buttons[`.dark .button-outlined.button--${colorName}:hover:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover)`] = {
+            '--ripple-color': theme(`colors.${colorName}.600`),
         };
 
         // Text buttons
         buttons[`.button-text.button--${colorName}`] = {
-            color: color['600'],
+            '--button-color': color['600'],
+            '--button-dark-text-color': colorName === 'slate' ? color['300'] : color['700'],
             '--ripple-color': color['300'],
         };
 
+        buttons[`.dark .button-text.button--${colorName}`] = {
+            '--ripple-color': color['200'],
+        };
+
         buttons[`.button-text.button--${colorName}:hover:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover)`] = {
-            backgroundColor: color['50'],
+            '--button-bg': color['50'],
+            '--button-dark-text-color': color['700'],
+            '--button-dark-bg': color['500'],
         };
 
         buttons[`.button-text.button--${colorName}:active:not([disabled]):not(.button--disabled):not(.button--busy):not(.button--no-hover)`] = {
-            backgroundColor: color['50'],
+            '--button-bg': color['50'],
+            '--button-dark-text-color': color['700'],
+            '--button-dark-bg': color['500'],
         };
     }
 

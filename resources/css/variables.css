@@ -1,0 +1,14 @@
+:root {
+    /* buttons */
+    --button-border-radius: theme("borderRadius.md");
+    --button-font-weight: theme("fontWeight.semibold");
+    --button-hover-shadow: rgb(76 78 100 / 56%) 0 6px 18px -8px;
+    --button-active-shadow: rgb(76 78 100 / 20%) 0 5px 5px -3px, rgb(76 78 100 / 14%) 0 8px 10px 1px, rgb(76 78 100 / 12%) 0 3px 14px 2px;
+    --button-pill-radius: 30px;
+
+    /* links */
+    --link-text-color: theme("colors.blue.600");
+    --link-hover-text-color: theme("colors.blue.500");
+    --link-dark-text-color: theme("colors.slate.600");
+    --link-dark-hover-text-color: theme("colors.slate.500");
+}
