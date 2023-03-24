@@ -24,4 +24,10 @@
     .button-text:is([disabled], .button--disabled):not(.button--busy) {
         @apply text-slate-300/25;
     }
+
+    /* links */
+    .app-link--dark {
+        --link-text-color: var(--link-dark-dark-mode-text-color);
+        --link-hover-text-color: var(--link-dark-dark-mode-hover-text-color);
+    }
 }

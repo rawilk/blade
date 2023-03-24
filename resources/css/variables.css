@@ -11,4 +11,6 @@
     --link-hover-text-color: theme("colors.blue.500");
     --link-dark-text-color: theme("colors.slate.600");
     --link-dark-hover-text-color: theme("colors.slate.500");
+    --link-dark-dark-mode-text-color: theme('colors.white');
+    --link-dark-dark-mode-hover-text-color: theme('colors.slate.100');
 }
