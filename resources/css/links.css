@@ -32,4 +32,8 @@
     a.text-xs .external-indicator svg {
         @apply w-3 h-3;
     }
+
+    .hide-external .external-indicator {
+        @apply hidden;
+    }
 }
