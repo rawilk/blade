@@ -6,16 +6,12 @@ namespace Rawilk\Blade\Components\Card;
 
 use Illuminate\Support\Arr;
 use Rawilk\Blade\Components\BladeComponent;
+use Rawilk\Blade\Enums\CardType;
 
 class Card extends BladeComponent
 {
-    // Types (for header styling)
-    public const ERROR = 'error';
-
-    public const SUCCESS = 'success';
-
     public function __construct(
-        public string $type = '',
+        public string|CardType $type = '',
         public mixed $header = false,
         public mixed $footer = false,
         public ?string $bodyClass = null,
@@ -24,6 +20,10 @@ class Card extends BladeComponent
         public ?string $stickyHeaderOffset = null,
         public ?string $href = null,
     ) {
+        if ($type instanceof CardType) {
+            $this->type = $type->value;
+        }
+
         $this->flush = $flush ?? config('blade.defaults.card.flush', false);
         $this->stickyHeader = $stickyHeader ?? config('blade.defaults.card.sticky_header', true);
         $this->stickyHeaderOffset = $stickyHeaderOffset ?? config('blade.defaults.card.sticky_header_offset', '1rem');
