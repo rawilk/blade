@@ -1,0 +1,143 @@
+@layer components {
+    .card {
+        @apply relative
+        shadow
+        dark:shadow-none
+        border
+        lg:rounded-[--card-border-radius];
+
+        background-color: var(--card-bg);
+        border-color: var(--card-border-color);
+    }
+
+    .card.has-link .card-body:hover {
+        background-color: var(--card-link-hover-bg);
+    }
+
+    .card.has-link.card--image:has(.card-link:hover) {
+        background-color: var(--card-link-hover-bg);
+    }
+
+    .card-header {
+        @apply px-4
+        py-5
+        sm:px-6
+        lg:rounded-t-[--card-border-radius];
+
+        background-color: var(--card-header-bg);
+        color: var(--card-header-color);
+    }
+
+    .card-header :is(h1, h2, h3, h4, h5, h6) {
+        font-size: var(--card-title-font-size);
+        line-height: var(--card-title-line-height);
+        font-weight: var(--card-title-font-weight);
+    }
+
+    .card-subtitle {
+        @apply mt-1;
+
+        font-size: var(--card-subtitle-font-size);
+        line-height: var(--card-subtitle-line-height);
+        color: var(--card-subtitle-color);
+    }
+
+    .card-body {
+        @apply relative lg:rounded-[--card-border-radius];
+
+        color: var(--card-body-color);
+        font-weight: var(--card-body-font-weight);
+    }
+
+    .card-body:not(.flush) {
+        @apply px-4
+        py-5
+        sm:p-6;
+    }
+
+    .card-header + .card-body {
+        @apply lg:rounded-t-none;
+    }
+
+    .card-body:has(+ .card-footer) {
+        @apply lg:rounded-b-none;
+    }
+
+    .card-footer {
+        @apply px-4
+        py-4
+        sm:px-6
+        lg:rounded-b-[--card-border-radius];
+
+        background-color: var(--card-footer-bg);
+        color: var(--card-footer-color);
+    }
+
+    .card--image {
+        @apply flex;
+    }
+
+    .card-img img {
+        @apply object-cover w-full h-full;
+    }
+
+    :is(.card--image__top, .card--image__bottom) {
+        @apply flex-col;
+    }
+
+    :is(.card--image__left, .card--image__right) {
+        @apply flex-col md:flex-row;
+    }
+
+    :is(.card--image__left, .card--image__right) .card-img {
+        @apply md:w-1/3 lg:w-2/5;
+    }
+
+    :is(.card--image__left, .card--image__right) .card-body {
+        @apply md:flex-1;
+    }
+
+    /* top side */
+    .card--image__top .card-img img {
+        @apply rounded-t-[--card-border-radius];
+    }
+
+    .card--image__top .card-body {
+        @apply lg:rounded-t-none;
+    }
+
+    /* left side */
+    .card--image__left .card-img img {
+        @apply lg:rounded-l-[--card-border-radius];
+    }
+
+    .card--image__left .card-body {
+        @apply lg:rounded-l-none;
+    }
+
+    /* bottom side */
+    .card--image__bottom {
+        @apply flex-col-reverse;
+    }
+
+    .card--image__bottom .card-img img {
+        @apply lg:rounded-b-[--card-border-radius];
+    }
+
+    .card--image__bottom .card-body {
+        @apply lg:rounded-b-none;
+    }
+
+    /* right side */
+    .card--image__right {
+        @apply md:flex-row-reverse;
+    }
+
+    .card--image__right .card-img img {
+        @apply lg:rounded-r-[--card-border-radius];
+    }
+
+    .card--image__right .card-body {
+        @apply lg:rounded-r-none;
+    }
+}

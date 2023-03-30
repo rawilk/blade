@@ -40,6 +40,21 @@ return [
             'size' => 'md',
         ],
 
+        'card' => [
+            // Apply a CSS class to the card body by default.
+            'body_class' => null,
+
+            // Remove all padding from the card body by default.
+            'flush' => false,
+
+            // Make the card header sticky by default.
+            'sticky_header' => true,
+
+            // Define the space from the top that the sticky header will be anchored to.
+            // Use a string with a unit (e.g. '1rem')
+            'sticky_header_offset' => '0',
+        ],
+
         'link' => [
             // Applies a css `app-link` class to the link
             'app_link' => true,
@@ -70,6 +85,7 @@ return [
     */
     'components' => [
         'button' => Components\Button\Button::class,
+        'card' => Components\Card\Card::class,
         'link' => Components\Navigation\Link::class,
     ],
 

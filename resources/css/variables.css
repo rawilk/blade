@@ -6,6 +6,34 @@
     --button-active-shadow: rgb(76 78 100 / 20%) 0 5px 5px -3px, rgb(76 78 100 / 14%) 0 8px 10px 1px, rgb(76 78 100 / 12%) 0 3px 14px 2px;
     --button-pill-radius: 30px;
 
+    /* cards */
+    --card-bg: theme('colors.white');
+    --card-border-color: theme('colors.gray.200');
+    --card-border-radius: theme('borderRadius.lg');
+    --card-header-bg: theme('colors.slate.50');
+    --card-header-color: theme('colors.gray.600');
+    --card-body-color: theme('colors.gray.700');
+    --card-body-font-weight: theme('fontWeight.normal');
+    --card-title-font-size: theme('fontSize.base');
+    --card-title-line-height: theme('lineHeight.6');
+    --card-title-font-weight: theme('fontWeight.semibold');
+    --card-subtitle-font-size: theme('fontSize.sm');
+    --card-subtitle-line-height: theme('lineHeight.5');
+    --card-subtitle-color: theme('colors.gray.500');
+    --card-footer-color: theme('colors.gray.700');
+    --card-footer-bg: theme('colors.slate.50');
+    --card-link-hover-bg: theme('colors.gray.100');
+
+    --card-dark-bg: theme('colors.gray.800');
+    --card-dark-border-color: theme('colors.gray.700');
+    --card-dark-header-bg: theme('colors.gray.700');
+    --card-dark-header-color: theme('colors.white');
+    --card-dark-body-color: theme('colors.slate.300');
+    --card-dark-subtitle-color: theme('colors.gray.300');
+    --card-dark-footer-color: theme('colors.white');
+    --card-dark-footer-bg: theme('colors.gray.700');
+    --card-dark-link-hover-bg: theme('colors.gray.700');
+
     /* links */
     --link-text-color: theme("colors.blue.600");
     --link-hover-text-color: theme("colors.blue.500");
