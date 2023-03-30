@@ -6,6 +6,7 @@ namespace Rawilk\Blade\Components;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
+use Illuminate\View\ComponentSlot;
 
 abstract class BladeComponent extends Component
 {
@@ -32,5 +33,17 @@ abstract class BladeComponent extends Component
         }
 
         return $fullName;
+    }
+
+    /**
+     * Ensures we always have an instance of ComponentSlot for merging attributes in slots.
+     * Useful when the "slot" may not always be provided to the component, but we
+     * need some default attributes always present.
+     */
+    public function componentSlot(mixed $slot): ComponentSlot
+    {
+        return $slot instanceof ComponentSlot
+            ? $slot
+            : new ComponentSlot;
     }
 }

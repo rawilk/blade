@@ -34,6 +34,21 @@ module.exports = plugin.withOptions(function (options = {}) {
             });
         }
 
+        // cards
+        if (options.card ?? true) {
+            addDarkVariant(styles, '.card', darkSelector, {
+                '--card-bg': 'var(--card-dark-bg)',
+                '--card-border-color': 'var(--card-dark-border-color)',
+                '--card-body-color': 'var(--card-dark-body-color)',
+                '--card-header-bg': 'var(--card-dark-header-bg)',
+                '--card-header-color': 'var(--card-dark-header-color)',
+                '--card-subtitle-color': 'var(--card-dark-subtitle-color)',
+                '--card-footer-bg': 'var(--card-dark-footer-bg)',
+                '--card-footer-color': 'var(--card-dark-footer-color)',
+                '--card-link-hover-bg': 'var(--card-dark-link-hover-bg)',
+            });
+        }
+
         // links
         if (options.link ?? true) {
             addDarkVariant(styles, '.app-link--dark', darkSelector, {
