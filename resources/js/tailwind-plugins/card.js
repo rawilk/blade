@@ -8,6 +8,8 @@ module.exports = function ({ addComponents, config, theme }) {
     const variants = {
         error: 'red',
         success: 'green',
+        warning: 'orange',
+        info: 'blue',
     };
 
     for (const variant in variants) {

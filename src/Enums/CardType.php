@@ -8,4 +8,6 @@ enum CardType: string
 {
     case Error = 'error';
     case Success = 'success';
+    case Warning = 'warning';
+    case Info = 'info';
 }
