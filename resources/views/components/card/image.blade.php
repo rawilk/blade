@@ -13,7 +13,12 @@
         @endisset
     </div>
 
-    <div class="card-body">
+    <div @class([
+        'card-body',
+        'flush' => $flush,
+        config('blade.defaults.card.body_class'),
+        $bodyClass,
+    ])>
         {{ $slot }}
     </div>
 </div>
