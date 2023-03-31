@@ -53,6 +53,9 @@ return [
             // Define the space from the top that the sticky header will be anchored to.
             // Use a string with a unit (e.g. '1rem')
             'sticky_header_offset' => '0',
+
+            // Define the z-index of the sticky header by default.
+            'sticky_header_z_index' => '21',
         ],
 
         'link' => [

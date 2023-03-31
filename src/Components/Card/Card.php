@@ -18,6 +18,7 @@ class Card extends BladeComponent
         public ?bool $flush = null,
         public ?bool $stickyHeader = null,
         public ?string $stickyHeaderOffset = null,
+        public ?string $stickyHeaderZIndex = null,
         public ?string $href = null,
     ) {
         if ($type instanceof CardType) {
@@ -27,6 +28,7 @@ class Card extends BladeComponent
         $this->flush = $flush ?? config('blade.defaults.card.flush', false);
         $this->stickyHeader = $stickyHeader ?? config('blade.defaults.card.sticky_header', true);
         $this->stickyHeaderOffset = $stickyHeaderOffset ?? config('blade.defaults.card.sticky_header_offset', '1rem');
+        $this->stickyHeaderZIndex = $stickyHeaderZIndex ?? config('blade.defaults.card.sticky_header_z_index', '21');
     }
 
     public function cardClass(): string
@@ -44,7 +46,7 @@ class Card extends BladeComponent
         return Arr::toCssClasses([
             'card-header',
             "card-header--{$type}",
-            'sticky top-[--sticky-header-offset] z-[999]' => $this->stickyHeader,
+            'sticky top-[--sticky-header-offset] z-[--sticky-header-z-index]' => $this->stickyHeader,
         ]);
     }
 }

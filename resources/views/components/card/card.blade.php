@@ -1,6 +1,6 @@
 <div {{ $attributes->except(['style'])->class($cardClass()) }}
      @if ($stickyHeader)
-         style="--sticky-header-offset: {{ $stickyHeaderOffset }};"
+         style="--sticky-header-offset: {{ $stickyHeaderOffset }}; --sticky-header-z-index: {{ $stickyHeaderZIndex }};"
      @endif
 >
     @if ($header)
