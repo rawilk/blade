@@ -16,11 +16,13 @@
         @endif
     </div>
 
-    <div @class([
-        'flex-shrink-0',
-        'ml-4 mt-4' => $wrap,
-        'flex self-center' => ! $wrap,
-    ])>
-        {{ $slot }}
-    </div>
+    @unless ($slot->isEmpty())
+        <div @class([
+            'flex-shrink-0',
+            'ml-4 mt-4' => $wrap,
+            'flex self-center' => ! $wrap,
+        ])>
+            {{ $slot }}
+        </div>
+    @endunless
 </div>
