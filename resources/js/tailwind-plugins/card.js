@@ -19,6 +19,7 @@ module.exports = function ({ addComponents, config, theme }) {
             '--card-header-bg': theme(`colors.${color}.300`),
             '--card-header-color': theme(`colors.${color}.800`),
             '--card-subtitle-color': theme(`colors.${color}.800`),
+            '--card-action-hover-bg': theme(`colors.${color}.200`),
         };
 
         addDarkVariant(cards, `.card-header--${variant}`, darkSelector, {

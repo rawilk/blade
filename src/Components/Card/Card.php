@@ -20,6 +20,10 @@ class Card extends BladeComponent
         public ?string $stickyHeaderOffset = null,
         public ?string $stickyHeaderZIndex = null,
         public ?string $href = null,
+        public bool $collapse = false,
+
+        // Only applies if $collapse = true
+        public bool $defaultOpen = true,
     ) {
         if ($type instanceof CardType) {
             $this->type = $type->value;

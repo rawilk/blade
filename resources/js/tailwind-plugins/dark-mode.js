@@ -46,6 +46,7 @@ module.exports = plugin.withOptions(function (options = {}) {
                 '--card-footer-bg': 'var(--card-dark-footer-bg)',
                 '--card-footer-color': 'var(--card-dark-footer-color)',
                 '--card-link-hover-bg': 'var(--card-dark-link-hover-bg)',
+                '--card-action-hover-bg': 'var(--card-dark-action-hover-bg)',
             });
         }
 

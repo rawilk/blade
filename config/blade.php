@@ -56,6 +56,14 @@ return [
 
             // Define the z-index of the sticky header by default.
             'sticky_header_z_index' => '21',
+
+            // Set the icon to use by default for the collapse button.
+            // Tip: We will rotate the icon 180 degrees when the card is collapsed,
+            // so it's advisable to use an icon that works well in both directions.
+            'collapse_icon' => 'heroicon-m-chevron-down',
+
+            // Apply the ripple effect to card actions by default.
+            'action_ripple' => true,
         ],
 
         'link' => [

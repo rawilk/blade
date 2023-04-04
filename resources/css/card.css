@@ -28,6 +28,10 @@
         color: var(--card-header-color);
     }
 
+    .card-header:has(+ .card-collapse.collapsed) {
+        @apply lg:rounded-b-[--card-border-radius];
+    }
+
     .card-header :is(h1, h2, h3, h4, h5, h6) {
         font-size: var(--card-title-font-size);
         line-height: var(--card-title-line-height);
@@ -139,5 +143,27 @@
 
     .card--image__right .card-body {
         @apply lg:rounded-r-none;
+    }
+
+    /* card action buttons */
+    .card__action {
+        @apply p-1.5
+        rounded-full
+        transition-colors
+        text-[color:--card-header-color];
+    }
+
+    .card__action:is(:hover, :focus):not([disabled]) {
+        @apply bg-[--card-action-hover-bg]
+        outline-none
+        ring-0;
+    }
+
+    .card__action[disabled] {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    .card__action svg {
+        @apply w-5 h-5;
     }
 }

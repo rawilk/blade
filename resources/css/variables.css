@@ -23,6 +23,7 @@
     --card-footer-color: theme('colors.gray.700');
     --card-footer-bg: theme('colors.slate.50');
     --card-link-hover-bg: theme('colors.gray.100');
+    --card-action-hover-bg: theme('colors.gray.200');
 
     --card-dark-bg: theme('colors.gray.800');
     --card-dark-border-color: theme('colors.gray.700');
@@ -33,6 +34,7 @@
     --card-dark-footer-color: theme('colors.white');
     --card-dark-footer-bg: theme('colors.gray.700');
     --card-dark-link-hover-bg: theme('colors.gray.700');
+    --card-dark-action-hover-bg: theme('colors.gray.500');
 
     /* links */
     --link-text-color: theme("colors.blue.600");
