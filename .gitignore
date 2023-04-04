@@ -1,13 +1,14 @@
 .env
 .idea
+.php-cs-fixer.cache
 .php_cs
 .php_cs.cache
-.php-cs-fixer.cache
 .phpunit.result.cache
 build
 composer.lock
 coverage
 node_modules
+package-lock.json
 phpstan.neon
 phpunit.xml
 psalm.xml

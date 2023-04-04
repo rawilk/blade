@@ -63,7 +63,10 @@
         "laravel": {
             "providers": [
                 "Rawilk\\Blade\\BladeServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Blade": "Rawilk\\Blade\\Facades\\Blade"
+            }
         }
     },
     "minimum-stability": "dev",
