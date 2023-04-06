@@ -4,7 +4,7 @@
             x-accordion:button
             @class([
                 'accordion-title__button',
-                'flush' => $flush || $isFlush,
+                'flush' => $componentIsFlush($isFlush),
                 'icon-left' => $iconLeft,
                 config('blade.defaults.accordion.title_classes'),
                 $titleClasses,

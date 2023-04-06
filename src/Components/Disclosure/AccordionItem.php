@@ -38,7 +38,7 @@ class AccordionItem extends BladeComponent
 
     public function classes(array $options = []): string
     {
-        $flush = $this->isFlush($options['flush'] ?? null);
+        $flush = $this->componentIsFlush($options['flush'] ?? null);
 
         return Arr::toCssClasses([
             'accordion',
@@ -52,7 +52,7 @@ class AccordionItem extends BladeComponent
         return $parentRegionRole ?? $this->regionRole;
     }
 
-    protected function isFlush(?bool $parentIsFlush): bool
+    public function componentIsFlush(?bool $parentIsFlush): bool
     {
         return $parentIsFlush ?? $this->flush;
     }
