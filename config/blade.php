@@ -135,4 +135,19 @@ return [
     |
     */
     'component_prefix' => '',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Blade Assets URL
+    |--------------------------------------------------------------------------
+    |
+    | This value sets the path to the Blade JavaScript assets, for cases
+    | where your app's domain root is not the correct path. By default,
+    | Blade will load its JavaScript assets from the app's
+    | "relative root".
+    |
+    | Examples: "/assets", "myapp.com/app",
+    |
+    */
+    'asset_url' => null,
 ];
