@@ -14,6 +14,26 @@ return [
     |
     */
     'defaults' => [
+        'accordion' => [
+            // Apply the x-collapse directive to the accordion panel by default.
+            'x_collapse' => true,
+
+            // Set the icon to use on the accordion trigger button by default.
+            'button_icon' => 'heroicon-m-chevron-up',
+
+            // Rotate the accordion trigger button icon by 180 degrees when the accordion is open by default.
+            'rotate_button_icon' => true,
+
+            // Render the icon of the accordion title to the left instead by default.
+            'icon_left' => false,
+
+            // Style accordion items without a border by default.
+            'flush' => false,
+
+            // Apply CSS classes to the title area of the accordion by default.
+            'title_classes' => null,
+        ],
+
         'button' => [
             // Apply a color by default to every button
             'color' => 'slate',

@@ -183,11 +183,14 @@ function handleGroup(el, Alpine) {
                 },
 
                 __enabledPanels() {
-                    return this.__panels.filter(panel => ! panel.__disabled);
+                    return this.__panels.filter(panel => panel.isConnected && ! panel.__disabled);
                 },
 
                 __addPanel(el) {
                     this.__panels.push(el);
+
+                    // Remove any panels that are no longer connected to the DOM.
+                    this.__panels = this.__panels.filter(panel => panel.isConnected);
                 },
 
                 __selectPanel(el) {
@@ -312,6 +315,7 @@ function handleButton(el, Alpine) {
         '@click'() { this.$data.__toggle() },
         ':aria-expanded'() { return this.$data.__isSelected },
         ':aria-controls'() { return this.$data.$id('blade-accordion-panel') },
+        ':disabled'() { return this.$data.__isDisabled },
         '@keydown.space.prevent.stop'() { this.$data.__toggle() },
         '@keydown.enter.prevent.stop'() { this.$data.__toggle() },
         '@keydown.arrow-down'(e) {

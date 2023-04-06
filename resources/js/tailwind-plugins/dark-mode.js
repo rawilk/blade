@@ -7,6 +7,19 @@ module.exports = plugin.withOptions(function (options = {}) {
         const darkSelector = darkModeSelector(config('darkMode', 'class'));
         const styles = {};
 
+        // accordions
+        if (options.accordion ?? true) {
+            addDarkVariant(styles, '.accordion', darkSelector, {
+                '--accordion-title-color': 'var(--accordion-dark-title-color)',
+                '--accordion-border-color': 'var(--accordion-dark-border-color)',
+                '--accordion-title-hover-bg': 'var(--accordion-dark-title-hover-bg)',
+                '--accordion-title-ring-color': 'var(--accordion-dark-title-ring-color)',
+                '--accordion-title-expanded-color': 'var(--accordion-dark-title-expanded-color)',
+                '--accordion-title-expanded-bg': 'var(--accordion-dark-title-expanded-bg)',
+                '--accordion-content-color': 'var(--accordion-dark-content-color)',
+            });
+        }
+
         // buttons
         if (options.button ?? true) {
             addDarkVariant(styles, '.button', darkSelector, {

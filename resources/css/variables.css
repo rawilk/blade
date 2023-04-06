@@ -1,4 +1,23 @@
 :root {
+    /* accordion */
+    --accordion-border-radius: theme('borderRadius.lg');
+    --accordion-border-color: theme('colors.gray.200');
+    --accordion-title-color: theme('colors.gray.500');
+    --accordion-title-font-weight: theme('fontWeight.medium');
+    --accordion-title-hover-bg: theme('colors.blue.100');
+    --accordion-title-ring-color: theme('colors.blue.200');
+    --accordion-title-expanded-color: theme('colors.blue.600');
+    --accordion-content-color: theme('colors.gray.500');
+    --accordion-flush-title-expanded-font-weight: theme('fontWeight.bold');
+
+    --accordion-dark-title-color: theme('colors.gray.400');
+    --accordion-dark-border-color: theme('colors.gray.700');
+    --accordion-dark-title-hover-bg: theme('colors.gray.800');
+    --accordion-dark-title-ring-color: theme('colors.blue.600');
+    --accordion-dark-title-expanded-color: theme('colors.blue.300');
+    --accordion-dark-title-expanded-bg: theme('colors.blue.800');
+    --accordion-dark-content-color: theme('colors.gray.400');
+
     /* buttons */
     --button-border-radius: theme("borderRadius.md");
     --button-font-weight: theme("fontWeight.semibold");

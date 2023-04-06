@@ -1,0 +1,108 @@
+@layer components {
+    .accordion-group:has(.accordion:not(.accordion--flush)) {
+        @apply rounded-[--accordion-border-radius];
+    }
+
+    .accordion:not(.accordion--flush) {
+        @apply border
+            border-[color:--accordion-border-color];
+    }
+
+    .accordion:not(.accordion--flush):first-of-type {
+        @apply rounded-t-[--accordion-border-radius];
+    }
+
+    .accordion:not(.accordion--flush):not(:first-of-type) {
+        @apply border-t-0;
+    }
+
+    .accordion:not(.accordion--flush):first-of-type .accordion-title__button {
+        @apply rounded-t-[--accordion-border-radius];
+    }
+
+    .accordion:not(.accordion--flush):last-of-type {
+        @apply rounded-b-[--accordion-border-radius];
+    }
+
+    .accordion:not(.accordion--flush):last-of-type >.collapsed .accordion-title__button {
+        @apply rounded-b-[--accordion-border-radius];
+    }
+
+    .accordion-title__button {
+        @apply relative
+        flex
+        items-center
+        justify-between
+        w-full
+        p-5
+        font-[--accordion-title-font-weight]
+        text-left
+        text-[color:--accordion-title-color]
+        focus:outline-none
+        disabled:opacity-50;
+    }
+
+    .accordion-title__button:not(.flush):not([disabled]):hover {
+        @apply bg-[--accordion-title-hover-bg];
+    }
+
+    .accordion-title__button:not([disabled]) {
+        @apply focus:ring-4
+        focus:ring-[--accordion-title-ring-color]
+        focus:z-[2];
+    }
+
+    .accordion-title__button:not(.flush).expanded {
+        @apply bg-[--accordion-title-expanded-bg,var(--accordion-title-hover-bg)]
+        text-[color:--accordion-title-expanded-color];
+    }
+
+    .accordion-title__button:not(.flush).expanded:not([disabled]) {
+        @apply hover:bg-[--accordion-title-expanded-bg,var(--accordion-title-hover-bg)];
+    }
+
+    .accordion-title__button.flush.expanded {
+        @apply font-[--accordion-flush-title-expanded-font-weight];
+    }
+
+    .accordion-title__button.icon-left {
+        @apply flex-row-reverse;
+    }
+
+    .accordion-icon {
+        @apply h-6
+        w-6
+        shrink-0
+        ml-1.5;
+    }
+
+    .accordion-icon.can-rotate.closed {
+        @apply rotate-180;
+    }
+
+    .accordion-title__button.icon-left .accordion-icon {
+        @apply ml-0 mr-1.5;
+    }
+
+    .accordion-panel {
+        @apply text-[color:--accordion-content-color];
+    }
+
+    .accordion-panel.expanded {
+        @apply border-t
+        border-[color:--accordion-border-color];
+    }
+
+    .accordion--flush {
+        @apply border-b
+        border-[color:--accordion-border-color];
+    }
+
+    .accordion--borderless {
+        @apply border-b-0;
+    }
+
+    .accordion--borderless .accordion-panel.expanded {
+        @apply border-t-0;
+    }
+}
