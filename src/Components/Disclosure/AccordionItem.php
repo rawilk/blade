@@ -49,11 +49,7 @@ class AccordionItem extends BladeComponent
 
     public function renderRegionRole(?bool $parentRegionRole = null): bool
     {
-        if (is_bool($parentRegionRole)) {
-            return $parentRegionRole;
-        }
-
-        return $this->regionRole;
+        return $parentRegionRole ?? $this->regionRole;
     }
 
     protected function isFlush(?bool $parentIsFlush): bool
