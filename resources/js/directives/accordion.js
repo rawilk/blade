@@ -51,7 +51,7 @@ export default function (Alpine) {
 
 function handleRoot(el, Alpine) {
     Alpine.bind(el, {
-        'x-modelable': '__isOpen',
+        'x-modelable': '$data.__isOpen',
         'x-data'() {
             return {
                 __isOpen: false,
