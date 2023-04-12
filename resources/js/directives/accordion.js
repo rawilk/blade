@@ -1,4 +1,5 @@
 import isFunction from '../utils/isFunction';
+import { isObject } from '../utils/object';
 
 export default function (Alpine) {
     Alpine.directive('accordion', (el, directive) => {
@@ -30,7 +31,7 @@ export default function (Alpine) {
 
         return {
             selectPanel(panelEl) {
-                if (typeof panelEl !== 'object') {
+                if (! isObject(panelEl)) {
                     return data.__selectPanel(panelEl);
                 }
 
@@ -222,7 +223,7 @@ function handleGroup(el, Alpine) {
                 },
 
                 __selectPanel(el) {
-                    const id = typeof el === 'object'
+                    const id = isObject(el)
                         ? el.__id
                         : el;
 
