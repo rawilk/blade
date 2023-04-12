@@ -1,6 +1,6 @@
 import isFunction from '../utils/isFunction';
 import { isObject } from '../utils/object';
-import { isElement } from '../utils/dom';
+import { isElement, isTag, hasAttr, setAttr } from '../utils/dom';
 
 export default function (Alpine) {
     Alpine.directive('accordion', (el, directive) => {
@@ -333,14 +333,16 @@ function handleGroup(el, Alpine) {
 function handleButton(el, Alpine) {
     Alpine.bind(el, {
         'x-init'() {
-            if (this.$el.tagName.toLowerCase() === 'button' && ! this.$el.hasAttribute('type')) {
-                this.$el.type = 'button';
-            } else if (this.$el.tagName.toLowerCase() !== 'button' && ! this.$el.hasAttribute('role')) {
-                this.$el.setAttribute('role', 'button');
+            const isButton = isTag(this.$el, 'button');
+
+            if (isButton && ! hasAttr(this.$el, 'type')) {
+                setAttr(this.$el, 'type', 'button');
+            } else if (! isButton && ! hasAttr(this.$el, 'role')) {
+                setAttr(this.$el, 'role', 'button');
             }
         },
         ':tabindex'() {
-            if (this.$el.tagName.toLowerCase() === 'button') {
+            if (isTag(this.$el, 'button')) {
                 return null;
             }
 
@@ -405,7 +407,7 @@ function handlePanel(el, Alpine) {
         'x-init'() {
             // Handle an edge case where the panel is supposed to be initially open, but x-collapse is not allowing it to be shown.
             // This usually happens when dynamically adding panels to the DOM in livewire.
-            if (this.$accordion.isOpen && this.$el.hasAttribute('x-collapse') && this.$el.hasAttribute('hidden')) {
+            if (this.$accordion.isOpen && hasAttr(this.$el, 'x-collapse') && hasAttr(this.$el, 'hidden')) {
                 this.$el.removeAttribute('hidden');
                 this.$el.style.height = 'auto';
                 this.$el.style.overflow = null;
