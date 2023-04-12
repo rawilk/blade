@@ -1,5 +1,6 @@
 import isFunction from '../utils/isFunction';
 import { isObject } from '../utils/object';
+import { isElement } from '../utils/dom';
 
 export default function (Alpine) {
     Alpine.directive('accordion', (el, directive) => {
@@ -36,7 +37,7 @@ export default function (Alpine) {
                 }
 
                 // If we receive an HTMLElement, we need to find the panel object on it.
-                if (panelEl instanceof HTMLElement) {
+                if (isElement(panelEl)) {
                     let $data = Alpine.$data(panelEl);
 
                     $data.__panelEl && data.__selectPanel($data.__panelEl);
