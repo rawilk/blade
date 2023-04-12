@@ -97,6 +97,18 @@ function handleRoot(el, Alpine) {
                         });
 
                         observer.observe(this.$el, { attributes: true });
+
+                        if (isFunction(this.$data.__selectPanel)) {
+                            queueMicrotask(() => {
+                                this.$watch('__isOpen', () => {
+                                    // We need to let our accordion group parent know that the value was
+                                    // changed externally, usually via x-model.
+                                    if (this.__isOpen !== this.__isSelected) {
+                                        this.$data.__selectPanel(this.$el);
+                                    }
+                                });
+                            });
+                        }
                     });
                 },
 
