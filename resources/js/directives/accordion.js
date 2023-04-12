@@ -75,11 +75,11 @@ function handleRoot(el, Alpine) {
                         this.__isOpen = true;
                     }
 
-                    if (typeof this.$data.__addPanel === 'function') {
+                    if (isFunction(this.$data.__addPanel)) {
                         this.$data.__addPanel(this.$el);
                     }
 
-                    if (this.__isOpen && typeof this.$data.__selectPanel === 'function' && this.__shouldSelectOnInit()) {
+                    if (this.__isOpen && isFunction(this.$data.__selectPanel) && this.__shouldSelectOnInit()) {
                         this.$data.__selectPanel(this.$el);
                     }
 
@@ -116,7 +116,7 @@ function handleRoot(el, Alpine) {
 
                 get __isSelected() {
                     // If we are in a panel group, we need to check the group's active panel.
-                    if (typeof this.$data.__isSelectedPanel === 'function') {
+                    if (isFunction(this.$data.__isSelectedPanel)) {
                         return this.$data.__isSelectedPanel(this.__panelEl);
                     }
 
@@ -130,7 +130,7 @@ function handleRoot(el, Alpine) {
 
                     this.__isOpen = false;
 
-                    if (typeof this.$data.__selectPanel === 'function') {
+                    if (isFunction(this.$data.__selectPanel)) {
                         this.$data.__selectPanel(
                             this.$data.__multiple ? this.__panelEl : null
                         );
@@ -144,7 +144,7 @@ function handleRoot(el, Alpine) {
 
                     this.__isOpen = true;
 
-                    if (typeof this.$data.__selectPanel === 'function') {
+                    if (isFunction(this.$data.__selectPanel)) {
                         this.$data.__selectPanel(this.__panelEl);
                     }
                 },
@@ -156,7 +156,7 @@ function handleRoot(el, Alpine) {
 
                     this.__isOpen = ! this.__isOpen;
 
-                    if (typeof this.$data.__selectPanel === 'function') {
+                    if (isFunction(this.$data.__selectPanel)) {
                         this.$data.__selectPanel(this.__panelEl);
                     }
                 },
@@ -336,7 +336,7 @@ function handleButton(el, Alpine) {
         '@keydown.enter.prevent.stop'() { this.$data.__toggle() },
         '@keydown.arrow-down'(e) {
             // We only need to handle this when in a group.
-            if (typeof this.$data.__focusNext === 'function') {
+            if (isFunction(this.$data.__focusNext)) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -345,7 +345,7 @@ function handleButton(el, Alpine) {
         },
         '@keydown.arrow-up'(e) {
             // We only need to handle this when in a group.
-            if (typeof this.$data.__focusPrev === 'function') {
+            if (isFunction(this.$data.__focusPrev)) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -354,7 +354,7 @@ function handleButton(el, Alpine) {
         },
         '@keydown.home'(e) {
             // We only need to handle this when in a group.
-            if (typeof this.$data.__focusFirst === 'function') {
+            if (isFunction(this.$data.__focusFirst)) {
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -363,7 +363,7 @@ function handleButton(el, Alpine) {
         },
         '@keydown.end'(e) {
             // We only need to handle this when in a group.
-            if (typeof this.$data.__focusLast === 'function') {
+            if (isFunction(this.$data.__focusLast)) {
                 e.preventDefault();
                 e.stopPropagation();
 
