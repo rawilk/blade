@@ -1,3 +1,5 @@
+import isFunction from '../utils/isFunction';
+
 export default function (Alpine) {
     Alpine.directive('accordion', (el, directive) => {
         if (! directive.value) {
@@ -98,6 +100,12 @@ function handleRoot(el, Alpine) {
                     });
                 },
 
+                destroy() {
+                    if (isFunction(this.$data.__destroyPanel)) {
+                        this.$data.__destroyPanel(this.$el);
+                    }
+                },
+
                 __shouldSelectOnInit() {
                     if (this.$data.__multiple) {
                         return true;
@@ -191,6 +199,14 @@ function handleGroup(el, Alpine) {
 
                     // Remove any panels that are no longer connected to the DOM.
                     this.__panels = this.__panels.filter(panel => panel.isConnected);
+                },
+
+                __destroyPanel(el) {
+                    this.__panels.splice(this.__panels.indexOf(el), 1);
+
+                    if (! this.__multiple && this.__panels.length === 0) {
+                        this.__active = undefined;
+                    }
                 },
 
                 __selectPanel(el) {
@@ -365,6 +381,15 @@ function handlePanel(el, Alpine) {
     Alpine.bind(el, {
         'x-show'() {
             return this.$accordion.isOpen;
+        },
+        'x-init'() {
+            // Handle an edge case where the panel is supposed to be initially open, but x-collapse is not allowing it to be shown.
+            // This usually happens when dynamically adding panels to the DOM in livewire.
+            if (this.$accordion.isOpen && this.$el.hasAttribute('x-collapse') && this.$el.hasAttribute('hidden')) {
+                this.$el.removeAttribute('hidden');
+                this.$el.style.height = 'auto';
+                this.$el.style.overflow = null;
+            }
         },
         ':id'() {
             return this.$data.$id('blade-accordion-panel');
