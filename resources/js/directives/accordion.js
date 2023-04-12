@@ -109,6 +109,12 @@ function handleRoot(el, Alpine) {
                                         this.$data.__selectPanel(this.$el);
                                     }
                                 });
+
+                                this.$watch('__isSelected', () => {
+                                    if (this.__isSelected !== this.__isOpen) {
+                                        this.__isOpen = this.__isSelected;
+                                    }
+                                });
                             });
                         }
                     });
