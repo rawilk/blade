@@ -69,4 +69,4 @@ it('renders a nonce automatically if one is set in spatie/laravel-csp', function
         ->assertElementExists('script', function (AssertElement $script) {
             $script->has('nonce', 'my_nonce');
         });
-});
+})->depends('it renders a nonce automatically if one is set in Vite');
