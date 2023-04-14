@@ -118,6 +118,7 @@ return [
         'button' => Components\Button\Button::class,
         'card' => Components\Card\Card::class,
         'link' => Components\Navigation\Link::class,
+        'script' => Components\Tags\Script::class,
     ],
 
     /*
