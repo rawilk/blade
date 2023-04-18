@@ -2,7 +2,7 @@
    @if ($isExternalLink()) rel="{{ $rel($attributes->get('rel')) }}" @endif
    {{ $attributes->class($classes()) }}
 >
-    <span class="inline-flex items-center">
+    <span class="flex items-center">
         @if ($iconLeft ?? $leftIcon ?? false)
             <span class="link__icon link__icon--left mr-1.5" aria-hidden="true">
                 @if ($leftIcon)
