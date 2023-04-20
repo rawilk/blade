@@ -3,7 +3,8 @@
         @apply font-medium
         transition
         focus:outline-none
-        relative;
+        relative
+        inline-block;
 
         color: var(--link-text-color);
     }
