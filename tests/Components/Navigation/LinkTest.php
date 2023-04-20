@@ -62,9 +62,9 @@ test('plain links can be rendered with global config', function () {
             $div->doesntContain('a', [
                 'class' => 'app-link',
             ])
-            ->contains('a', [
-                'text' => 'Hello world',
-            ]);
+                ->contains('a', [
+                    'text' => 'Hello world',
+                ]);
         });
 });
 
@@ -154,11 +154,11 @@ test('icons can be rendered on either side of the link text', function () {
                 'text' => 'left icon',
                 'aria-hidden' => 'true',
             ])
-            ->contains('span', [
-                'class' => 'link__icon--right',
-                'text' => 'right icon',
-                'aria-hidden' => 'true',
-            ]);
+                ->contains('span', [
+                    'class' => 'link__icon--right',
+                    'text' => 'right icon',
+                    'aria-hidden' => 'true',
+                ]);
         })
         ->assertSeeInOrder([
             '<span',

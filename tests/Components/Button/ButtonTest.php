@@ -248,9 +248,9 @@ test('ripple directives can be omitted', function () {
                 'x-ripple',
                 'x-ripple-focus',
             ])
-            ->contains('button', [
-                'text' => 'Click me',
-            ]);
+                ->contains('button', [
+                    'text' => 'Click me',
+                ]);
         });
 });
 
