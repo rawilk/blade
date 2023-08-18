@@ -26,7 +26,7 @@ trait HandlesExternalLinks
         return $this->_external = isExternalLink($this->href);
     }
 
-    public function rel(?string $userDefinedRel = null): string
+    public function rel(string $userDefinedRel = null): string
     {
         return Arr::toCssClasses([
             'nofollow',
