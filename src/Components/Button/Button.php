@@ -43,7 +43,7 @@ class Button extends BladeComponent
         public bool $noReferrer = false, // Only applies to external links
 
         // Extra attributes
-        null|array|Collection $extraAttributes = null,
+        array|Collection $extraAttributes = null,
     ) {
         $this->size = $size ?? config('blade.defaults.button.size', 'md');
         $this->color = $color ?? config('blade.defaults.button.color', 'slate');

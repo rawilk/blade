@@ -47,7 +47,7 @@ class AccordionItem extends BladeComponent
         ]);
     }
 
-    public function renderRegionRole(?bool $parentRegionRole = null): bool
+    public function renderRegionRole(bool $parentRegionRole = null): bool
     {
         return $parentRegionRole ?? $this->regionRole;
     }

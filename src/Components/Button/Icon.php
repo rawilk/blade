@@ -27,7 +27,7 @@ class Icon extends Button
         public ?string $icon = null,
 
         // Extra attributes
-        null|array|Collection $extraAttributes = null,
+        array|Collection $extraAttributes = null,
     ) {
         parent::__construct(
             color: $color,

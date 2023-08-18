@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Blade as LaravelBlade;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\Str;
-use function Pest\Laravel\get;
 use Sinnbeck\DomAssertions\Asserts\AssertElement;
+
+use function Pest\Laravel\get;
 
 it('renders a script tag', function () {
     $template = <<<'HTML'

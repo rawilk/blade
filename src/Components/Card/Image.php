@@ -9,9 +9,9 @@ use Illuminate\Support\Arr;
 class Image extends Card
 {
     public function __construct(
-        ?string $bodyClass = null,
-        ?bool $flush = null,
-        ?string $href = null,
+        string $bodyClass = null,
+        bool $flush = null,
+        string $href = null,
 
         // Image specific
         public string $src = '',
