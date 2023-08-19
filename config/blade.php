@@ -100,7 +100,22 @@ return [
             // External indicators will never show up on button links
             'hide_external_indicator' => false,
         ],
+
+        'inner-nav-item' => [
+            'color' => 'primary',
+        ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Filament
+    |--------------------------------------------------------------------------
+    |
+    | If you have filament installed, we will style certain components for filament.
+    |
+    */
+
+    'filament' => env('BLADE_FILAMENT', false),
 
     /*
     |--------------------------------------------------------------------------

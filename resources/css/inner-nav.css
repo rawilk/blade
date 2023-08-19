@@ -1,0 +1,21 @@
+@layer components {
+    .inner-nav {
+        @apply flex
+        overflow-x-auto
+        border-b
+        lg:block
+        lg:w-64
+        lg:flex-none
+        lg:border-0;
+    }
+
+    .inner-nav-content {
+        @apply lg:flex-auto lg:px-0 py-8 lg:py-0;
+    }
+
+    .inner-nav-item__icon {
+        @apply h-6
+        w-6
+        shrink-0;
+    }
+}
