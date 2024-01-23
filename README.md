@@ -1,3 +1,5 @@
+**Notice:** Since I started this project, I've started using Filament, and as a result don't really have a need for this anymore. No further changes will be committed to this package.
+
 **Notice:** This package is still under development and is not production ready. Available components and api may change at any time without a major version change; use at your own risk.
 
 # blade
