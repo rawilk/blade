@@ -28,7 +28,7 @@ php artisan vendor:publish --tag="blade-config"
 Assuming your app CSS file is located in `/resources/css/app.css`, you can load in the package's styles like this:
 
 ```css
-@import '../../vendor/rawilk/blade/resources/css/index.css';
+@import "../../vendor/rawilk/blade/resources/css/index.css";
 ```
 
 This will import all the package's styles into your stylesheet, however you are free to import only the stylesheets you need as well; they are all
@@ -61,7 +61,7 @@ and/or view of your own.
 
 The package also declares a `blade` blade component namespace. This means that
 for any component you may also use the `<x-blade::component-name>` syntax. For the `button`
-component, you would use `<x-blade::buttons.button />`. If you choose to render components 
+component, you would use `<x-blade::buttons.button />`. If you choose to render components
 using this syntax, you can safely remove the component alias from the config.
 
 ## Prefixing

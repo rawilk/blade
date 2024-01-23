@@ -50,7 +50,7 @@ return [
         // ...
         'button' => \App\View\MyButton::class,
     ],
-    
+
     // ...
 ];
 ```

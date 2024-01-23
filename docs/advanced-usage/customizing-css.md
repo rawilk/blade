@@ -16,7 +16,7 @@ You can import the `index.css` and run every `@apply` rule through your own `tai
 @tailwind components;
 @tailwind utilities;
 
-@import '../../vendor/rawilk/blade/resources/css/index.css';
+@import "../../vendor/rawilk/blade/resources/css/index.css";
 
 /* override our styles here */
 ```
@@ -30,7 +30,7 @@ Beware: you will have to manually keep this CSS in sync with changes in future p
 
 ```css
 /* app.css */
-@import 'custom/blade.css';
+@import "custom/blade.css";
 ```
 
 Let's say you wanted to change some styling for the `.button--icon` variant of a button. You could do so like this in the file you just created with the pasted in styles from the package:
@@ -39,7 +39,7 @@ Let's say you wanted to change some styling for the `.button--icon` variant of a
 /* custom/blade.css */
 .button--icon {
     @apply rounded-none p-2;
-    
+
     /* styles from the package */
     /*@apply rounded-full p-0;*/
 }
@@ -56,7 +56,7 @@ if you choose [Option 1](#user-content-option-1-use-your-own-tailwind-css-config
 ```js
 // tailwind.config.js
 
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors");
 
 module.exports = {
     // ...
@@ -82,9 +82,9 @@ components you are using:
 
 module.exports = {
     // ...
-    
+
     plugins: [
-        require('./vendor/rawilk/blade/resources/js/tailwind-plugins/button'),
+        require("./vendor/rawilk/blade/resources/js/tailwind-plugins/button"),
     ],
 };
 ```
@@ -107,10 +107,10 @@ module.exports = {
         "./resources/**/*.js",
 
         // Make sure you add these lines
-        './vendor/rawilk/blade/src/**/*.php',
-        './vendor/rawilk/blade/resources/**/*.php',
-        './vendor/rawilk/blade/config/blade.php',
-    ]
+        "./vendor/rawilk/blade/src/**/*.php",
+        "./vendor/rawilk/blade/resources/**/*.php",
+        "./vendor/rawilk/blade/config/blade.php",
+    ],
 };
 ```
 
@@ -124,7 +124,7 @@ module.exports = {
         {
             // For button sizing and colors
             pattern: /button--*/,
-        }
+        },
     ],
 };
 ```
@@ -135,11 +135,6 @@ and size classes you want to safelist instead of using a regex pattern:
 ```js
 module.exports = {
     // ...
-    safelist: [
-        'button--blue',
-        'button--red',
-        'button--md',
-        'button--lg',
-    ],
+    safelist: ["button--blue", "button--red", "button--md", "button--lg"],
 };
 ```
